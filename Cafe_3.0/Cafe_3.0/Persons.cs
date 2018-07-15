@@ -14,6 +14,10 @@ namespace Cafe_3._0
     {
         Random r = new Random();
         Bitmap[,] person = new Bitmap[6, 4];
+        int i;
+        int j;
+
+        public Bitmap CurrentBitmap { get; set; } 
 
         public Persons()
         {
@@ -46,32 +50,39 @@ namespace Cafe_3._0
             person[5, 1] = Properties.Resources.grandmather_neutral;
             person[5, 2] = Properties.Resources.grandmather_cry;
             person[5, 3] = Properties.Resources.grandmather_angry;
+
+
+            CurrentBitmap = RandPers();
         }
 
         public Bitmap RandPers()
         {
-            int i;
-            int j;
+             i = r.Next(0, 5);
+             j = r.Next(1, 2);
+            CurrentBitmap = person[i, j];
+            //CurrentBitmap = person[i, j];
+            //CurrentBitmap = person[0, 0];
 
-            i = r.Next(0, 5);
-            j = r.Next(1, 2);
+            return CurrentBitmap;
+        }
 
+        public int Mood()
+        {
+            return j;
+        }
+
+        public Bitmap PersUp()
+        {
+            j += 1;
             return person[i, j];
         }
 
-        public Bitmap PersUp(int i, int j)
+        public Bitmap PersDown()
         {
-            return person[i, j + 1];
+            j -= 1;
+            return person[i, j];
         }
 
-        public Bitmap PersDown(int i, int j)
-        {
-            return person[i, j - 1];
-        }
-
-        //public Bitmap PersonCheck(int i)
-        //{
-
-        //}
+      
     }
 }

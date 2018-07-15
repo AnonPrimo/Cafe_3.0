@@ -68,6 +68,8 @@
             // 
             // pictureBox_Person
             // 
+            this.pictureBox_Person.BackgroundImage = global::Cafe_3._0.Properties.Resources.boy_happy;
+            this.pictureBox_Person.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox_Person.Location = new System.Drawing.Point(804, 377);
             this.pictureBox_Person.Name = "pictureBox_Person";
             this.pictureBox_Person.Size = new System.Drawing.Size(173, 163);
@@ -148,6 +150,7 @@
             this.pictureBox_coins.TabIndex = 9;
             this.pictureBox_coins.TabStop = false;
             this.pictureBox_coins.UseWaitCursor = true;
+            this.pictureBox_coins.Click += new System.EventHandler(this.pictureBox_coins_Click);
             // 
             // button_ok
             // 
@@ -287,6 +290,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_IceCream)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Person)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Tea)).EndInit();

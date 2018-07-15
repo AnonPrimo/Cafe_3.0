@@ -31,9 +31,18 @@ namespace Cafe_3._0
         {
             person.RandPers();
             food = new Food();
-            
+
+            //if (checkBox_Coffe)
+            //    if (food.CheckFood(3))
+            //        person = person.PersUp();
 
 
+        }
+
+        private void CheckGame()
+        {
+           for(int i = 0; i < 6; ++i)
+               // if(i)
         }
 
     }

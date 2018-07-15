@@ -59,7 +59,7 @@ namespace Cafe_3._0
             return person[i, j];
         }
 
-        public Bitmap PersUp(int j)
+        public Bitmap PersUp(int j) 
         {
 
         }

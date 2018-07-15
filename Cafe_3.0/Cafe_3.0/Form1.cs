@@ -86,7 +86,7 @@ namespace Cafe_3._0
 
         private void pictureBox_coins_Click(object sender, EventArgs e)
         {
-            person.RandPers();
+            person.RandPers(); 
         }
     }
 }

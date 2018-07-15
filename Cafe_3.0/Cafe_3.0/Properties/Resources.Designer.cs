@@ -123,6 +123,16 @@ namespace Cafe_3._0.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap coins {
+            get {
+                object obj = ResourceManager.GetObject("coins", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap girl_angry {
             get {
                 object obj = ResourceManager.GetObject("girl_angry", resourceCulture);
@@ -286,6 +296,16 @@ namespace Cafe_3._0.Properties {
         internal static System.Drawing.Bitmap man_neutral {
             get {
                 object obj = ResourceManager.GetObject("man_neutral", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap speak_cloud {
+            get {
+                object obj = ResourceManager.GetObject("speak_cloud", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

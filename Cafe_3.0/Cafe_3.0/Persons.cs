@@ -69,9 +69,6 @@ namespace Cafe_3._0
             return person[i, j - 1];
         }
 
-        public void Check()
-        {
-
-        }
+        
     }
 }

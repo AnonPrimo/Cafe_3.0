@@ -41,7 +41,7 @@ namespace Cafe_3._0
 
         private void CheckGame()
         {
-           for(int i = 0; i < 6; ++i)
+           for(int i = 0; i < 6; ++i) { }
                // if(i)
         }
 

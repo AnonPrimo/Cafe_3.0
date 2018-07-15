@@ -18,7 +18,7 @@ namespace Cafe_3._0
         {
             InitializeComponent();
 
-            this.BackgroundImage = Properties.Resources.cafe_background;
+            //this.BackgroundImage = proper
         }
 
        

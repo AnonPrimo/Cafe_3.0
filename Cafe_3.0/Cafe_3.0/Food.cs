@@ -10,17 +10,22 @@ using System.Windows.Forms;
 
 namespace Cafe_3._0
 {
-    public partial class Form1 : Form
+    class Food
     {
-         
+        Random r = new Random();
+        int f;
 
-        public Form1()
+        public Food()
         {
-            InitializeComponent();
-
-            this.BackgroundImage = Properties.Resources.cafe_background;
+            f = r.Next(1, 3);        
         }
 
-       
+        public bool CheckFood(int i)
+        {
+            if (f == i)
+                return true;
+            else return false;
+        }
+ 
     }
 }

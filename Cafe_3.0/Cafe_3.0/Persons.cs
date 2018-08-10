@@ -13,9 +13,9 @@ namespace Cafe_3._0
     class Persons
     {
         Random r = new Random();
-        Bitmap[,] person = new Bitmap[6, 4];
-        int i;
-        int j;
+        private  Bitmap[,] person = new Bitmap[6, 4];
+        private int i;
+        private int j;
 
         public Bitmap CurrentBitmap { get; set; } 
 
@@ -60,8 +60,6 @@ namespace Cafe_3._0
              i = r.Next(0, 5);
              j = r.Next(1, 2);
             CurrentBitmap = person[i, j];
-            //CurrentBitmap = person[i, j];
-            //CurrentBitmap = person[0, 0];
 
             return CurrentBitmap;
         }
@@ -73,14 +71,16 @@ namespace Cafe_3._0
 
         public Bitmap PersUp()
         {
-            j += 1;
+            j -= 1;
             return person[i, j];
+            
         }
 
         public Bitmap PersDown()
         {
-            j -= 1;
-            return person[i, j];
+            j += 1;
+           return person[i, j];
+            
         }
 
       

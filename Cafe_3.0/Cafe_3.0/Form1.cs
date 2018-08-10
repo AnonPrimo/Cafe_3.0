@@ -26,33 +26,47 @@ namespace Cafe_3._0
 
             this.BackgroundImage = Properties.Resources.cafe_background;
 
+            label_Yes_or_No.Text = "";
             current_money = 10;
             needed_money = 100;
             person = new Persons();
             tries = 3;
             food = new Food();
-            this.pictureBox_Person.BackgroundImage = person.CurrentBitmap;//Properties.Resources.boy_angry;
+            this.pictureBox_Person.BackgroundImage = person.RandPers();
+
+            if (ExitCafe())
+                this.pictureBox_Person.BackgroundImage = person.RandPers();
+           
         }
 
 
         public void Click_OK(object sender, EventArgs e)
         {
             tries--;
-            if (checkBox_IceCream.Enabled)
+
+            label_Amount_of_Coins.Text = current_money.ToString("n");
+
+            if (checkBox_IceCream.Checked == true)
                 ch = 1;
-            if (checkBox_Tea.Enabled)
+            if (checkBox_Tea.Checked == true)
                 ch = 2;
-            if (checkBox_Coffee.Enabled)
+            if (checkBox_Coffee.Checked == true)
                 ch = 3;
 
             if (food.CheckFood(ch))
-                person.PersUp();
+            {
+                label_Yes_or_No.Text = "Yes";
+                this.pictureBox_Person.BackgroundImage = person.PersUp();
+            }
             else
-                person.PersDown();
+            {
+                label_Yes_or_No.Text = "No";
+                this.pictureBox_Person.BackgroundImage = person.PersDown();
+            }
 
-            if (ExitCafe())
-                this.pictureBox_Person.BackgroundImage = person.RandPers();
+            
 
+            
         }
 
         public Boolean ExitCafe()
@@ -79,10 +93,7 @@ namespace Cafe_3._0
             return 0;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
+    
 
         private void pictureBox_coins_Click(object sender, EventArgs e)
         {

@@ -40,7 +40,6 @@ namespace Cafe_3._0
 
         public void Click_OK(object sender, EventArgs e)
         {
-            
             tries--;
             label_ClientState.Text = clients.ToString() + " clients";
             label_Amount_of_Coins.Text = current_money.ToString("n");
@@ -54,7 +53,6 @@ namespace Cafe_3._0
             
             if (food.CheckFood(ch))
             {
-
                 label_Yes_or_No.Text = "Yes";
                 this.pictureBox_Person.BackgroundImage = person.PersUp();
             }
@@ -80,9 +78,9 @@ namespace Cafe_3._0
                 tries = 3;
                
                 label_Amount_of_Coins.Text = current_money.ToString("n");
+                label_Yes_or_No.Text = " ";
 
                 this.pictureBox_Person.BackgroundImage = person.RandPers();
-                label_Yes_or_No.Text = "";
                 clients++;
                 label_ClientState.Text = clients.ToString() + " clients";
             }

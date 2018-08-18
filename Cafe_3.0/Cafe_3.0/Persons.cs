@@ -16,7 +16,7 @@ namespace Cafe_3._0
         private  Bitmap[,] person = new Bitmap[6, 4];
         private int i;
         private int j;
-
+        
         public Bitmap CurrentBitmap { get; set; } 
 
         public Persons()

@@ -24,7 +24,7 @@ namespace Cafe_3._0
         {
             if (f == i)
                 return true;
-            else return false;
+            return false;
         }
  
     }

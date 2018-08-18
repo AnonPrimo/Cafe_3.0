@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace Cafe_3._0
 {
@@ -16,7 +17,7 @@ namespace Cafe_3._0
         int current_money;
         int needed_money;
         Persons person;
-
+        Thread t;
         int tries;
         int ch;
         
@@ -33,15 +34,14 @@ namespace Cafe_3._0
             tries = 3;
             food = new Food();
             this.pictureBox_Person.BackgroundImage = person.RandPers();
-
-            if (ExitCafe())
-                this.pictureBox_Person.BackgroundImage = person.RandPers();
-           
+            t = Thread.CurrentThread;
         }
 
 
         public void Click_OK(object sender, EventArgs e)
         {
+            ExitCafe();
+
             tries--;
 
             label_Amount_of_Coins.Text = current_money.ToString("n");
@@ -64,21 +64,34 @@ namespace Cafe_3._0
                 this.pictureBox_Person.BackgroundImage = person.PersDown();
             }
 
-            
 
             
         }
 
-        public Boolean ExitCafe()
+        public void ExitCafe()
         {
-            if ((tries == 0) || (person.Mood() == 0) || (person.Mood() == 3))
+            if ((tries < 0) || (person.Mood() == 0) || (person.Mood() == 3))
             {
                 current_money += CheckMood();
                 tries = 3;
-                return true;
+                this.pictureBox_Person.BackgroundImage = person.RandPers();
+                label_Yes_or_No.Text = "";
+                label_Amount_of_Coins.Text = current_money.ToString("n");
+
             }
-            return false;
-             
+
+            if (current_money < 0)
+            {
+                MessageBox.Show("You lose!");
+                this.Close();
+            }
+            else
+            if (current_money >= 100)
+            {
+                MessageBox.Show("You win!");
+                this.Close();
+            }
+
         }
        
         public int CheckMood()

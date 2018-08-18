@@ -42,7 +42,7 @@ namespace Cafe_3._0
 
             tries--;
 
-            label_Amount_of_Coins.Text = current_money.ToString("\n");
+            label_Amount_of_Coins.Text = current_money.ToString("n");
 
             if (checkBox_IceCream.Checked == true)
                 ch = 1;
@@ -76,7 +76,7 @@ namespace Cafe_3._0
                 Thread.Sleep(1000);
                 this.pictureBox_Person.BackgroundImage = person.RandPers();
                 label_Yes_or_No.Text = "";
-                label_Amount_of_Coins.Text = current_money.ToString("\n");
+                label_Amount_of_Coins.Text = current_money.ToString("n");
             }
 
             if (current_money < 0)

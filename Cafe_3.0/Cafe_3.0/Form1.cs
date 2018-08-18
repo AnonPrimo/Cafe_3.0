@@ -74,10 +74,10 @@ namespace Cafe_3._0
             {
                 current_money += CheckMood();
                 tries = 3;
-                this.pictureBox_Person.BackgroundImage = person.RandPers();
                 label_Yes_or_No.Text = "";
                 label_Amount_of_Coins.Text = current_money.ToString("n");
-
+                Thread.Sleep(1000);
+                this.pictureBox_Person.BackgroundImage = person.RandPers();
             }
 
             if (current_money < 0)

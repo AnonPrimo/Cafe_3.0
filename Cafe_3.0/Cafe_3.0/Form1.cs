@@ -40,47 +40,49 @@ namespace Cafe_3._0
 
         public void Click_OK(object sender, EventArgs e)
         {
-
+            
             tries--;
             label_ClientState.Text = clients.ToString() + " clients";
             label_Amount_of_Coins.Text = current_money.ToString("n");
-
+            
             if (checkBox_IceCream.Checked == true)
                 ch = 1;
             if (checkBox_Tea.Checked == true)
                 ch = 2;
             if (checkBox_Coffee.Checked == true)
                 ch = 3;
-
+            
             if (food.CheckFood(ch))
             {
+
                 label_Yes_or_No.Text = "Yes";
-                 person.PersUp();
-                this.pictureBox_Person.BackgroundImage = person.GetPers();
+                this.pictureBox_Person.BackgroundImage = person.PersUp();
             }
             else
             {
                 label_Yes_or_No.Text = "No";
-                person.PersDown();
-                this.pictureBox_Person.BackgroundImage = person.GetPers(); 
+                this.pictureBox_Person.BackgroundImage = person.PersDown();
             }
-            this.pictureBox1.BackgroundImage = person.GetPers();
+
+            if ((tries == 0) || (person.Mood() == 0) || (person.Mood() == 3))
+            {
+                pictureBox_Person.Refresh();
+                Thread.Sleep(1000);
+            }
             ExitCafe();
-
-
-
         }
 
         public void ExitCafe()
         {
             if ((tries == 0) || (person.Mood() == 0) || (person.Mood() == 3))
             {
-                Thread.Sleep(1000);
                 current_money += CheckMood();
                 tries = 3;
-                label_Yes_or_No.Text = "";
+               
                 label_Amount_of_Coins.Text = current_money.ToString("n");
+
                 this.pictureBox_Person.BackgroundImage = person.RandPers();
+                label_Yes_or_No.Text = "";
                 clients++;
                 label_ClientState.Text = clients.ToString() + " clients";
             }

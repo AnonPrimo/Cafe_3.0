@@ -49,14 +49,12 @@
             this.label_Yes_or_No = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_IceCream)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Person)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Tea)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Coffee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_coins)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_speakCloud)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox_IceCream
@@ -232,7 +230,7 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(862, 260);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 18);
+            this.label6.Size = new System.Drawing.Size(92, 18);
             this.label6.TabIndex = 16;
             this.label6.Text = "Good luck! ☺";
             // 
@@ -289,22 +287,12 @@
             this.label2.TabIndex = 21;
             this.label2.Text = "Cafe";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(375, 127);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(173, 163);
-            this.pictureBox1.TabIndex = 22;
-            this.pictureBox1.TabStop = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Cafe_3._0.Properties.Resources.cafe_background;
             this.ClientSize = new System.Drawing.Size(1020, 574);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label_Yes_or_No);
@@ -335,7 +323,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Coffee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_coins)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_speakCloud)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -364,7 +351,6 @@
         private System.Windows.Forms.Label label_Yes_or_No;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

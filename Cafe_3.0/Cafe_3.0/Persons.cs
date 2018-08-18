@@ -74,29 +74,17 @@ namespace Cafe_3._0
             return j;
         }
 
-        //public Bitmap PersUp()
-        //{
-        //    j -= 1;
-        //    return person[i, j];
-
-        //}
-
-        //public Bitmap PersDown()
-        //{
-        //    j += 1;
-        //   return person[i, j];
-
-        //}
-
-        public void PersUp()
+        public Bitmap PersUp()
         {
             j -= 1;
+            return person[i, j];
 
         }
 
-        public void PersDown()
+        public Bitmap PersDown()
         {
             j += 1;
+            return person[i, j];
 
         }
 

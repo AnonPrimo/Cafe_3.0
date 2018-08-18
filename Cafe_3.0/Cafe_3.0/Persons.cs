@@ -17,7 +17,7 @@ namespace Cafe_3._0
         private int i;
         private int j;
         
-        public Bitmap CurrentBitmap { get; set; } 
+       // public Bitmap CurrentBitmap { get; set; } 
 
         public Persons()
         {
@@ -52,16 +52,16 @@ namespace Cafe_3._0
             person[5, 3] = Properties.Resources.grandmather_angry;
 
 
-            CurrentBitmap = RandPers();
+         //   CurrentBitmap = RandPers();
         }
 
         public Bitmap RandPers()
         {
              i = r.Next(0, 6);
              j = r.Next(1, 3);
-            CurrentBitmap = person[i, j];
+           // CurrentBitmap = person[i, j];
 
-            return CurrentBitmap;
+            return person[i, j];
         }
 
         public int Mood()

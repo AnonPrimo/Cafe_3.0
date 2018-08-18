@@ -17,11 +17,12 @@ namespace Cafe_3._0
 
         public Food()
         {
-            f = r.Next(1, 3);        
+            f = r.Next(1, 4);        
         }
 
         public bool CheckFood(int i)
         {
+            f = r.Next(1, 4);
             if (f == i)
                 return true;
             return false;

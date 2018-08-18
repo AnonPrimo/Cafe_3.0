@@ -57,8 +57,8 @@ namespace Cafe_3._0
 
         public Bitmap RandPers()
         {
-             i = r.Next(0, 5);
-             j = r.Next(1, 2);
+             i = r.Next(0, 6);
+             j = r.Next(1, 3);
             CurrentBitmap = person[i, j];
 
             return CurrentBitmap;

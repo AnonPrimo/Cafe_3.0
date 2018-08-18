@@ -34,17 +34,15 @@ namespace Cafe_3._0
             tries = 3;
             food = new Food();
             this.pictureBox_Person.BackgroundImage = person.RandPers();
-            t = Thread.CurrentThread;
         }
 
 
         public void Click_OK(object sender, EventArgs e)
         {
-            ExitCafe();
 
             tries--;
 
-            label_Amount_of_Coins.Text = current_money.ToString("n");
+            label_Amount_of_Coins.Text = current_money.ToString("\n");
 
             if (checkBox_IceCream.Checked == true)
                 ch = 1;
@@ -64,8 +62,9 @@ namespace Cafe_3._0
                 this.pictureBox_Person.BackgroundImage = person.PersDown();
             }
 
+            ExitCafe();
 
-            
+
         }
 
         public void ExitCafe()
@@ -74,10 +73,10 @@ namespace Cafe_3._0
             {
                 current_money += CheckMood();
                 tries = 3;
+                Thread.Sleep(1000);
                 this.pictureBox_Person.BackgroundImage = person.RandPers();
                 label_Yes_or_No.Text = "";
-                label_Amount_of_Coins.Text = current_money.ToString("n");
-
+                label_Amount_of_Coins.Text = current_money.ToString("\n");
             }
 
             if (current_money < 0)
@@ -104,13 +103,16 @@ namespace Cafe_3._0
                 case 3: return -10;
             }
             return 0;
-        }
-
-    
+        }    
 
         private void pictureBox_coins_Click(object sender, EventArgs e)
         {
             person.RandPers(); 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

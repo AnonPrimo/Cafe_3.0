@@ -64,25 +64,41 @@ namespace Cafe_3._0
             return person[i, j];
         }
 
+        public Bitmap GetPers()
+        {
+            return person[i, j];
+        }
+
         public int Mood()
         {
             return j;
         }
 
-        public Bitmap PersUp()
+        //public Bitmap PersUp()
+        //{
+        //    j -= 1;
+        //    return person[i, j];
+
+        //}
+
+        //public Bitmap PersDown()
+        //{
+        //    j += 1;
+        //   return person[i, j];
+
+        //}
+
+        public void PersUp()
         {
             j -= 1;
-            return person[i, j];
-            
+
         }
 
-        public Bitmap PersDown()
+        public void PersDown()
         {
             j += 1;
-           return person[i, j];
-            
+
         }
 
-      
     }
 }

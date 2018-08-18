@@ -17,9 +17,9 @@ namespace Cafe_3._0
         int current_money;
         int needed_money;
         Persons person;
-        Thread t;
         int tries;
         int ch;
+        int clients;
         
         public Form1()
         {
@@ -34,6 +34,7 @@ namespace Cafe_3._0
             tries = 3;
             food = new Food();
             this.pictureBox_Person.BackgroundImage = person.RandPers();
+            clients = 1;
         }
 
 
@@ -41,7 +42,7 @@ namespace Cafe_3._0
         {
 
             tries--;
-
+            label_ClientState.Text = clients.ToString() + " clients";
             label_Amount_of_Coins.Text = current_money.ToString("n");
 
             if (checkBox_IceCream.Checked == true)
@@ -54,30 +55,39 @@ namespace Cafe_3._0
             if (food.CheckFood(ch))
             {
                 label_Yes_or_No.Text = "Yes";
-                this.pictureBox_Person.BackgroundImage = person.PersUp();
+                 person.PersUp();
+                this.pictureBox_Person.BackgroundImage = person.GetPers();
             }
             else
             {
                 label_Yes_or_No.Text = "No";
-                this.pictureBox_Person.BackgroundImage = person.PersDown();
+                person.PersDown();
+                this.pictureBox_Person.BackgroundImage = person.GetPers(); 
             }
-
+            this.pictureBox1.BackgroundImage = person.GetPers();
             ExitCafe();
+
 
 
         }
 
         public void ExitCafe()
         {
-            if ((tries < 0) || (person.Mood() == 0) || (person.Mood() == 3))
+            if ((tries == 0) || (person.Mood() == 0) || (person.Mood() == 3))
             {
+                Thread.Sleep(1000);
                 current_money += CheckMood();
                 tries = 3;
-                Thread.Sleep(1000);
-                this.pictureBox_Person.BackgroundImage = person.RandPers();
                 label_Yes_or_No.Text = "";
                 label_Amount_of_Coins.Text = current_money.ToString("n");
+                this.pictureBox_Person.BackgroundImage = person.RandPers();
+                clients++;
+                label_ClientState.Text = clients.ToString() + " clients";
             }
+
+            checkBox_Coffee.Checked = false;
+            checkBox_IceCream.Checked = false;
+            checkBox_Tea.Checked = false;
 
             if (current_money < 0)
             {

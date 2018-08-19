@@ -29,6 +29,7 @@ namespace Cafe_3._0
 
             label_Yes_or_No.Text = "";
             current_money = 10;
+            label_Amount_of_Coins.Text = current_money.ToString("n");
             needed_money = 100;
             person = new Persons();
             tries = 3;
@@ -51,17 +52,21 @@ namespace Cafe_3._0
             if (checkBox_Coffee.Checked == true)
                 ch = 3;
             
+
+
             if (food.CheckFood(ch))
             {
                 label_Yes_or_No.Text = "Yes";
                 this.pictureBox_Person.BackgroundImage = person.PersUp();
+                Refresh();
             }
             else
             {
                 label_Yes_or_No.Text = "No";
                 this.pictureBox_Person.BackgroundImage = person.PersDown();
+                Refresh();
             }
-
+           
             if ((tries == 0) || (person.Mood() == 0) || (person.Mood() == 3))
             {
                 pictureBox_Person.Refresh();
@@ -72,6 +77,7 @@ namespace Cafe_3._0
 
         public void ExitCafe()
         {
+          
             if ((tries == 0) || (person.Mood() == 0) || (person.Mood() == 3))
             {
                 current_money += CheckMood();
@@ -81,8 +87,11 @@ namespace Cafe_3._0
                 label_Yes_or_No.Text = " ";
 
                 this.pictureBox_Person.BackgroundImage = person.RandPers();
+
                 clients++;
                 label_ClientState.Text = clients.ToString() + " clients";
+
+                
             }
 
             checkBox_Coffee.Checked = false;

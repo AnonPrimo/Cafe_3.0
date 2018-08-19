@@ -230,7 +230,7 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(862, 260);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(92, 18);
+            this.label6.Size = new System.Drawing.Size(97, 18);
             this.label6.TabIndex = 16;
             this.label6.Text = "Good luck! ☺";
             // 
@@ -259,7 +259,7 @@
             // label_Yes_or_No
             // 
             this.label_Yes_or_No.AutoSize = true;
-            this.label_Yes_or_No.Location = new System.Drawing.Point(924, 328);
+            this.label_Yes_or_No.Location = new System.Drawing.Point(924, 329);
             this.label_Yes_or_No.Name = "label_Yes_or_No";
             this.label_Yes_or_No.Size = new System.Drawing.Size(44, 13);
             this.label_Yes_or_No.TabIndex = 19;
